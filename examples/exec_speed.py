@@ -5,7 +5,7 @@ from threading import Thread
 from multiprocessing import Process
 import asyncio
 
-COUNT = 1000000000
+COUNT = 500000000
 
 
 def test(count):
@@ -49,8 +49,12 @@ def with_asyncio():
 
 
 if __name__ == "__main__":
-    print("threading", timeit(with_threading, number=1))
-    print("mp", timeit(with_mp, number=1))
-    print("pure", timeit(pure, number=1))
-    print("aio", timeit(with_asyncio, number=1))
+    print('threading')
+    print(timeit(with_threading, number=1))
+    print('mp')
+    print(timeit(with_mp, number=1))
+    print('pure')
+    print(timeit(pure, number=1))
+    print('aio')
+    print(timeit(with_asyncio, number=1))
 
